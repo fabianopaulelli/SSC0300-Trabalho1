@@ -11,4 +11,15 @@
 
 # MODO DE FUNCIONAMENTO
 	- ( Pares mais próximos/Closest Pair ):
-		Introdução: Nesta parte, utilizou-se do conceito do método de ordenação Bubble Sort. Fixado o primeiro elemento (v[i]) do vetor, este percorre o vetor de tamanho N, dois a dois (v[i], v[i+1]), até encontrar um elemento maior que ele. Caso v[i]>v[i+1], então a troca entre eles é realizada e o algoritmo continua. Ao mesmo tempo, uma função (menor_dfab) que busca a menor diferença absoluta (delta) comparado a eles é executada. Ao final deste processo, o elemento v[N] será o maior elemento de todos. Este processo se repete N vezes, para cada elemento i...(n-1) do vetor. Portanto, o algoritmo é da ordem O(n²). Eficiente para um valor de N não muito grande e com uma lógica de fácil entendimento. Por fim, o vetor é ordenado pelo método utilizado na busca dos pares mais próximos: Bubble Sort.
+		Introdução: Nesta parte, utilizou-se do conceito do método de ordenação Bubble Sort a.
+		Fixado o primeiro elemento (v[i]) do vetor, este percorre o vetor de tamanho N, dois
+		a dois (v[i], v[i+1]), até encontrar um elemento maior que ele. Caso v[i]>v[i+1], 
+		então a troca entre eles é realizada e o algoritmo continua. Ao mesmo tempo, uma 
+		função (menor_dfab) que busca a menor diferença absoluta (delta) comparado a eles é
+		executada. Ao final deste processo, o elemento v[N] será o maior elemento de todos. 
+		Este processo se repete N vezes, para cada elemento i...(n-1) do vetor. Portanto, o 
+		algoritmo é da ordem O(n²). Se o vetor já estiver ordenado, então ele será da ordem 
+		O(n). Eficiente para um valor de N não muito grande e com uma lógica de fácil 
+		entendimento. 
+		Por fim, o vetor é ordenado pelo método utilizado na busca dos pares mais próximos: 
+		Bubble Sort.

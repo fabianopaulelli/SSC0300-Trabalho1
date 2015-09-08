@@ -3,16 +3,14 @@
 #include <math.h>
 
 void bubblesort(int *v, int n, int *a0, int *a1){
-    int i, j, aux, k, delta;
+    int i, j, aux, delta;
 
     for(i=0; i<n; i++){
         for(j=0; j<n-1; j++){
             if(v[j]>v[j+1]){
-            /**---- ORDENACAO ---*/
                 aux = v[j];
                 v[j] = v[j+1];
                 v[j+1] = aux;
-            /**----- FIM ORDENACAO ----*/
             }
 
             if(i==0){
@@ -33,6 +31,7 @@ void bubblesort(int *v, int n, int *a0, int *a1){
     }
     printf("\n %d - %d = %d", *a1, *a0, delta);
 }
+
 
 
 int main(){

@@ -6,10 +6,15 @@
 - FABIANO CAVALHEIRO PAULELLI - 8670013
 - RENAN STRANO DE OLIVEIRA    - 8530980
 
-# INSTRUÇÕES DE EXECUÇÃO DO PROGRAMA index.C
+# INSTRUÇÕES DE EXECUÇÃO DO PROGRAMA main.c
 
 
 # MODO DE FUNCIONAMENTO
 	- ( Pares mais próximos/Closest Pair ):
-		Introdução: Nesta parte, utilizou-se do conceito do método de ordenação Bubble Sort a. Fixado o primeiro elemento (v[i]) do vetor, este percorre o vetor de tamanho N, dois a dois (v[i], v[i+1]), até encontrar um elemento maior que ele. Caso v[i]>v[i+1], então a troca entre eles é realizada e o algoritmo continua. Ao mesmo tempo, uma função (menor_dfab) que busca a menor diferença absoluta (delta) comparado a eles é executada. Ao final deste processo, o elemento v[N] será o maior elemento de todos. Este processo se repete N vezes, para cada elemento i...(n-1) do vetor. Portanto, o algoritmo é da ordem O(n²). Se o vetor já estiver ordenado, então ele será da ordem O(n). Eficiente para um valor de N não muito grande e com uma lógica de fácil entendimento.
-				Por fim, o vetor é ordenado pelo método utilizado na busca dos pares mais próximos: Bubble Sort.
+		Introdução: Nesta parte, utilizou-se do conceito do método de ordenação Bubble Sort. Fixado o primeiro elemento (v[i]) do vetor, este é comparado ao elemento posterior do vetor (v[i+1]). Caso v[i] seja maior que v[i+1] (v[i]>v[i+1]) havera uma troca entre eles. E assim o algortimo continua com essa comparação dois-a-dois dos elementos do vetor. Dessa forma, o maior elemento do vetor é levado para a posição n do vetor (v[n]). Ao mesmo tempo, uma função (menor_dfab) que busca a menor diferença absoluta (delta) entre os vetores em comparação é executada. Este processo se repete N vezes, para cada elemento i...(n-1) do vetor. Portanto, o algoritmo é da ordem O(n²). Se o vetor já estiver ordenado, então ele será da ordem O(n). Eficiente para um valor de N não muito grande e com uma lógica de fácil entendimento, o BubbleSort foi adequado para o caso.
+		Por fim, o vetor ordenado pelo método utilizado (Bubble Sort) na busca dos pares mais próximos é impresso na tela.
+		Funcionamento: A função menor_dfab irá (...continuar)
+	
+	- ( Elemento Único / Element Uniqueness ):
+		Nesta parte, utilizou-se do conceito do método de ordenação Insertion Sort. Nesse método, o algoritmo "quebra" o vetor de N elemento em K (para k=0...[n-1] ) listas menores ordenando-as (começando de k=1 dado que a primeiro lista (k=0) é uma lista de um único elemento, portanto já está ordenada). Isso se repetira N vezes, portanto, o algoritmo é da Ordem(n²), para o pior caso. Para o melhor caso, se já estiver ordenado, então o algoritmo será da ordem O(n). Ao passo que a lista de K elementos está sendo ordenada, uma comparação é feita: Se o elemento K do vetor for igual à algum elemento da lista já ordenada, então ele será alocado em um vetor, denominado excluidos. Ao final da ordenação ( realizada pelo Insertion Sort ), uma função, chamada elementounico(), que irá imprimir somente os elementos que não se repetem no vetor, é executada.
+		Funcionamento: A função elementounico(), é executada quando a ordenação feita pelo método (Insertion Sort) é finalizada. Ela imprime todos os N elementos do vetor, menos àqueles que são iguais ao vetor excluidos[].

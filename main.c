@@ -3,6 +3,22 @@
 #include <math.h>
 #include <time.h>
 
+void menor_dfab(int *v, int n, int i, int j, int *a0, int *a1, int *delta){
+    if(i==0){
+        *delta = abs(v[j] - v[j+1]);
+        *a0 = v[j];
+        *a1 = v[j+1];
+    }
+
+    else{
+        if(*delta>abs(v[j]-v[j+1])){
+            *delta=abs(v[j]-v[j+1]);
+            *a0 = v[j];
+            *a1 = v[j+1];
+        }
+    }
+}
+
 void bubblesort(int *v, int n, int *a0, int *a1){
     int i, j, aux, delta;
 
@@ -13,24 +29,52 @@ void bubblesort(int *v, int n, int *a0, int *a1){
                 v[j] = v[j+1];
                 v[j+1] = aux;
             }
-
-            if(i==0){
-               delta= abs(v[j] - v[j+1]);
-               *a0 = v[j];
-               *a1 = v[j+1];
-            }
-
-            else{
-                    if(delta>abs(v[j]-v[j+1])){
-                        delta=abs(v[j]-v[j+1]);
-                        *a0 = v[j];
-                        *a1 = v[j+1];
-                    }
-            }
+            menor_dfab(v, n, i, j, a0, a1, &delta);
         }
     }
     printf("\n %d - %d = %d\n", *a1, *a0, delta);
 }
+
+void elementounico(int *v, int *excluidos, int n, int cont){
+    int i,j,flag;
+
+    printf("\n\n");
+    for(i=0; i<n; i++){
+        flag=1;
+
+        for(j=0; j<cont; j++){
+            if(v[i] == excluidos[j]){
+                flag=0;
+            }
+        }
+
+        if(flag==1) printf(" %d ", v[i]);
+    }
+}
+
+void insertionsort(int *v, int n) {
+   int *excluidos;
+   int i, j, x, cont=0;
+
+   excluidos = (int *) malloc(sizeof(int));
+
+   for (i = 1; i < n; i++){
+      x = v[i];
+      j = i - 1;
+      while ((j>=0) && (x <= v[j])) {
+         if(x == v[j]){
+            excluidos = (int *) realloc(excluidos, sizeof(int)*(cont+1));
+            excluidos[cont] = x;
+            cont++;
+         }
+         v[j+1] = v[j];
+         j--;
+      }
+      v[j+1] = x;
+   }
+   elementounico(v, excluidos, n, cont);
+}
+
 
 void imprime(int *v, int n){
     int i;
@@ -68,9 +112,8 @@ void le_vetor(int *v, int n){
 
 int main(){
     int i, a, b, opc, opc1;
-    int dado[]={5, 12, 3, 13, 1, 99};
+    int dado[]={5, 5, 3, 13, 3, 1};
     int *usuario, n;
-
     do{
         menuinicial();
         scanf("%d", &opc); getchar();
@@ -120,6 +163,12 @@ int main(){
 
                }
             }while(opc1!=0);
+          break;
+
+          case 2:
+          imprime(dado, 6);
+          insertionsort(dado, 6);
+          imprime(dado, 6);
           break;
 
         }

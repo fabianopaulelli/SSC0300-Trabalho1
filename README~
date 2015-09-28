@@ -6,19 +6,7 @@
 - FABIANO CAVALHEIRO PAULELLI - 8670013
 - RENAN STRANO DE OLIVEIRA    - 8530980
 
-
-# AMBIENTE DE DESENVOLVIMENTO
-- PLATAFORMA: LINUX - Elementary OS - Baseado no Ubuntu
-- COMPILADOR: GCC/CPP ( CODEBLOCKS )
-
-
-
 # INSTRUÇÕES DE EXECUÇÃO DO PROGRAMA main.c
-
-	Digitar o tamanho do vetor a ser analisado, logo após, digitar seus elementos.
-	Um menu de opções guiará o usuário a escolher entre as opções de analise: Pares Mais Próximo, Elemento Único, Distribuição de Frequência.
-	Após escolhida a opção deseja, o programa irá mostrar por etapas cada vetor analisado: Vetor dado, Vetor Escolhido e Vetor Inserido. Para alternar entre os vetores, o usuario deverá pressionar uma tecla.
-
 
 
 # MODO DE FUNCIONAMENTO
